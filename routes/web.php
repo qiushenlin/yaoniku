@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/qiushenlin/{data?}', function ($data=null) {
+    return view('qiushenlin',['data' => $data]);
+    #路由传入的一定要是数组
+})->where('data', '[0-9]+');
+#正则限制
+Route::get('/数据库/{id?}','mysql');
+
